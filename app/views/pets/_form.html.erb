@@ -1,0 +1,19 @@
+<% @pet.errors.full_messages.each do |msg| %>
+<div><%= msg %></div>
+<% end %>
+
+<%= form_for @pet do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+  </div>
+  <div>
+    <%= f.label :color, "Your pet's color?" %>
+    <%= f.text_field :color %>
+
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<h1>Pets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Color</th>
+    <th></th>
+  </tr>
+<% @pet.each do |pet| %>
+  <tr>
+    <th><%= pet.name %></th>
+    <th><%= pet.color %></th>
+
+    <th>
+      <%= link_to 'Edit', edit_pet_path(pet) %> |
+      <%= link_to 'Delete', pet_path(pet), method: :delete, data: {confirm: 'Are you sure?'} %>
+    </th>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Pet', new_pet_path %>
